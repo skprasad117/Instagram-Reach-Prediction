@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Reach Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles_home.css') }}">
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="https://github.com/skprasad117" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Instagram Reach Prediction</h1>
+    
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <div class="form-group">
+                <label for="followers">Followers</label>
+                <input id="followers" type="number" name="followers" placeholder="Number of Followers" />
+            </div>
+            
+            <div class="form-group">
+                <input class="btn-primary" type="submit" value="Predict" required />
+            </div>
+        </form>
+        
+        <h2>
+            The prediction is {{results}}
+        </h2>
+    </div>
+</body>
+</html>
